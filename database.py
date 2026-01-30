@@ -15,9 +15,6 @@ CREATE TABLE IF NOT EXISTS contacts (
 
 conn.commit()
 
-@app.get("/")
-def health():
-    return {"status": "ok"}
 
 
 
