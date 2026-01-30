@@ -2,6 +2,15 @@ from fastapi import FastAPI
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from database import conn, cursor
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # OK for portfolio; restrict later if needed
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI(title="Portfolio Contact API")
 
